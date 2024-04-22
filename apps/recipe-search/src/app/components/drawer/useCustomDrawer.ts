@@ -24,13 +24,7 @@ export const useCustomDrawer = (items: string[]) => {
     setOpenDrawer(newOpen)
   }
 
-  const handleChipClick = (item: string) => {
-    setSelectedItems((prevSelectedItems: string[]) =>
-      prevSelectedItems.includes(item)
-        ? prevSelectedItems.filter((selectedItem) => selectedItem !== item)
-        : [...prevSelectedItems, item]
-    )
-  }
+
 
   const handleChange = (newValue: number | number[]) => {
     setRangeValue(newValue as number[])
@@ -48,7 +42,11 @@ export const useCustomDrawer = (items: string[]) => {
         [item]: !prevCheckedMealTypes[item],
       }))
     } else if (type === 'dietType') {
-      handleChipClick(item)
+      setSelectedItems((prevSelectedItems: string[]) =>
+        prevSelectedItems.includes(item)
+          ? prevSelectedItems.filter((selectedItem) => selectedItem !== item)
+          : [...prevSelectedItems, item]
+      )
     }
   }
 
@@ -90,5 +88,6 @@ export const useCustomDrawer = (items: string[]) => {
     rangeValue,
     handleChange,
     handleToggle,
+    selectedItems
   }
 }
