@@ -18,7 +18,6 @@ export function RecipeList(props: RecipeListProps) {
   const [loading, setLoading] = useState(true) // Manage loading state
   const [searchTerm] = useAtom(searchAtom)
   const [nextLink, setNextLink] = useAtom(nextLinkAtom)
-  console.log(nextLink, 'nextLink')
 
   const [prevLink, setPrevLink] = useAtom(prevLinkAtom)
   const [link] = useAtom(urlAtom)
@@ -41,7 +40,6 @@ export function RecipeList(props: RecipeListProps) {
       try {
         setLoading(true) // Set loading state to true before making the request
         const response = await getApiResponse<Hits>()
-        console.log(response,"response");
         
         setRecipes(response.hits ? response.hits.map((h) => h.recipe) : [])
         setNextLink(

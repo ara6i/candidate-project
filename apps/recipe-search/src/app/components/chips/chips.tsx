@@ -12,7 +12,6 @@ const CustomChipList: React.FC<CustomChipListProps> = ({
 }) => {
   const { tags, handleChipClick, handleDelete, selectedItems } =
     useCustomChipList()
-console.log(selectedItems,"selectedItems");
 
   const theme = useTheme() // Access the theme object
 

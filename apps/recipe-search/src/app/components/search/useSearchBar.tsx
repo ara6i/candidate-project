@@ -56,7 +56,6 @@ const useSearchBar = (props?: SearchBarProps): UseSearchBarProps => {
   }
 
   const handleApplyFilter = () => {
-    console.log('Filter applied with dish type:', selectedDishType)
     handleFilterClose()
   }
 
