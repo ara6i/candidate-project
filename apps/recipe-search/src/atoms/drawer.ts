@@ -9,3 +9,4 @@ export const tagsAtom = atom([
   'low-fat',
   'low-sodium',
 ])
+export const chipAtom = atom([])

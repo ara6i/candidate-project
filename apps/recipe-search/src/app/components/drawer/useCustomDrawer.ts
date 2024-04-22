@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
-import { toggleDrawerAtom } from 'atoms/drawer'
+import { chipAtom, toggleDrawerAtom } from 'atoms/drawer'
 import { baseUrlAtom, urlAtom } from 'atoms/url'
 
 
@@ -8,6 +8,9 @@ export const useCustomDrawer = (items: string[]) => {
   const [openDrawer, setOpenDrawer] = useAtom(toggleDrawerAtom)
   const [_, setLink] = useAtom(urlAtom)
   const [uri] = useAtom(baseUrlAtom)
+  const [chip, setChips] = useAtom(chipAtom)
+
+
   const [selectedItems, setSelectedItems] = useState<string[]>([])
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>(
     {}
@@ -68,7 +71,7 @@ export const useCustomDrawer = (items: string[]) => {
     const urlWithMealTypes = selectedMealTypes
       .map((mealType) => `&mealType=${encodeURIComponent(mealType)}`)
       .join('')
-    const urlWithDietTypes = selectedDietTypes
+    const urlWithDietTypes = chip
       .map((dietType) => `&diet=${encodeURIComponent(dietType)}`)
       .join('')
 
@@ -77,7 +80,7 @@ export const useCustomDrawer = (items: string[]) => {
 
     const url = `${baseUrl}${urlWithDishTypes}${urlWithMealTypes}${urlWithDietTypes}${calorieRange}`
     setLink(url)
-  }, [checkedItems, checkedMealTypes, checkedDietTypes, rangeValue])
+  }, [checkedItems, checkedMealTypes, checkedDietTypes, rangeValue , chip])
 
   return {
     openDrawer,
