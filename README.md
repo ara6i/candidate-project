@@ -14,6 +14,7 @@ Final Result as a gif and some issues are attached
 
 I have added Jotai to avoid using many Context , all satates are in atoms folder in src/atoms
 this is the only package that i have added 
+the gif of result may load a bit slow because of 19 MB of size 
 
 ## Result
 ![Demo GIF](assets/final.gif)
