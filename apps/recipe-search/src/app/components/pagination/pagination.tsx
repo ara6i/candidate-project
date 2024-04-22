@@ -2,6 +2,7 @@ import React from 'react'
 import { Pagination, Stack } from '@mui/material'
 import { atom, useAtom } from 'jotai'
 import { pageLinkAtom } from 'atoms/pagination'
+import { urlAtom } from 'atoms/url'
 
 interface PaginationProps {
   pageCount: number
@@ -18,24 +19,22 @@ const PaginationComponent: React.FC<PaginationProps> = ({
   nextPageLink,
   prevPageLink,
 }) => {
-  const [link, setLink] = useAtom(pageLinkAtom)
+  const [link, setLink] = useAtom(urlAtom)
   console.log(prevPageLink, 'prevPageLink')
 
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    console.log(value, 'value')
-
     // Check if the value is greater than the current page and if there's a next page link
-    if (value === 2 && nextPageLink) {
-      onPageChange(value, nextPageLink)
-      setLink(nextPageLink)
+    if (value > currentPage && nextPageLink) {
+      onPageChange(value, nextPageLink);
+      setLink(nextPageLink);
     }
     // Check if the value is less than the current page and if there's a previous page link
-    if (value === 1 && prevPageLink) {
-      onPageChange(value, prevPageLink)
-      setLink(prevPageLink)
+    if (value < currentPage && prevPageLink) {
+      onPageChange(value, prevPageLink);
+      setLink(prevPageLink);
     }
-    // Otherwise, just trigger the onPageChange without setting the link
-  }
+  };
+  
 
   return (
     <Stack

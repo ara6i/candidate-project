@@ -41,6 +41,8 @@ export function RecipeList(props: RecipeListProps) {
       try {
         setLoading(true) // Set loading state to true before making the request
         const response = await getApiResponse<Hits>()
+        console.log(response,"response");
+        
         setRecipes(response.hits ? response.hits.map((h) => h.recipe) : [])
         setNextLink(
           response._links?.next?.href ? response._links?.next?.href : ''

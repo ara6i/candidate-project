@@ -17,7 +17,6 @@ export function App() {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
-    // You can also fetch data for the new page here
   }
   return (
     <>
