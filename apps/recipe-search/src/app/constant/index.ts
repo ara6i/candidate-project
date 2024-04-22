@@ -1,0 +1,2 @@
+export const REACT_APP_EDAMAM_APP_ID = '63ea1a0a'
+export const REACT_APP_EDAMAM_APP_KEY = '778cd827675218a8b1e8ff712c71e884'
