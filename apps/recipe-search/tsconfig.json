@@ -9,7 +9,11 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react" , 
+    "baseUrl": ".",
+    "paths": {
+      "atoms/*": ["src/atoms/*"]
+    }
   },
   "files": [],
   "include": [],

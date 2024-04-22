@@ -17,7 +17,7 @@ import CustomChipList from '../chips/chips'
 import { useCustomDrawer } from './useCustomDrawer'
 import CloseIcon from '@mui/icons-material/Close'
 import { useAtom } from 'jotai'
-import { toggleDrawerAtom } from 'atoms/drawer'
+import { toggleDrawerAtom } from '../../../atoms/drawer'
 
 const items: string[] = [
   'Biscuits and cookies',

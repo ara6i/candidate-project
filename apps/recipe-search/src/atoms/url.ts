@@ -1,7 +1,7 @@
 import {
   REACT_APP_EDAMAM_APP_ID,
   REACT_APP_EDAMAM_APP_KEY,
-} from 'apps/recipe-search/src/app/constant'
+} from '../app/constant/index'
 import { atom, useAtom } from 'jotai'
 
 export const urlAtom = atom(
