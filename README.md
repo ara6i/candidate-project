@@ -7,6 +7,7 @@ Final Result as a gif and some issues are attached
 - [Installation](#installation)
 - [Result](#result)
 - [Back Button Issue](#backbutton)
+- [Deploy](#deploy)
 
 
 ## Installation
@@ -15,9 +16,15 @@ I have added Jotai to avoid using many Context , all satates are in atoms folder
 this is the only package that i have added 
 
 ## Result
-![Demo GIF](assets/demo.gif)
+![Demo GIF](assets/final.gif)
 
 ## Back Button Issue
 In response there is no self , this is the attached screenshot of what the response is : 
 
-![Screenshot 1](assets/screenshot1.png)
+![final](assets/Link-issue.png)
+
+## Deploy 
+I could not deploy the project here is the attached error 
+I searched a lot but i didn't find the solution 
+
+![issue](assets/build-issue.png)
